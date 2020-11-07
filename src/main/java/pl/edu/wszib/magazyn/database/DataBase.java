@@ -25,8 +25,7 @@ public class DataBase implements IDataBase{
                 int newQuantity = quantity + currentProduct.getQuantity();
                 currentProduct.setQuantity(newQuantity);
                 return true;
-            }else
-                return false;
+            }
         }
         return false;
     }
@@ -38,8 +37,7 @@ public class DataBase implements IDataBase{
                 int newQuantity = currentProduct.getQuantity() - quantity;
                 currentProduct.setQuantity(newQuantity);
                 return true;
-            }else
-                return false;
+            }
         }
         return false;
     }
