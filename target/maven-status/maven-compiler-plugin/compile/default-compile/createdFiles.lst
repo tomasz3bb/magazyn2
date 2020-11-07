@@ -1,0 +1,7 @@
+pl\edu\wszib\magazyn\AppConfiguration.class
+pl\edu\wszib\magazyn\model\Product.class
+pl\edu\wszib\magazyn\gui\GUI.class
+pl\edu\wszib\magazyn\gui\IGUI.class
+pl\edu\wszib\magazyn\App.class
+pl\edu\wszib\magazyn\database\DataBase.class
+pl\edu\wszib\magazyn\database\IDataBase.class
