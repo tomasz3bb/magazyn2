@@ -1,7 +1,11 @@
-pl\edu\wszib\magazyn\AppConfiguration.class
-pl\edu\wszib\magazyn\model\Product.class
-pl\edu\wszib\magazyn\gui\GUI.class
-pl\edu\wszib\magazyn\gui\IGUI.class
+pl\edu\wszib\magazyn\database\impl\ProductsRepositoryImpl.class
+pl\edu\wszib\magazyn\database\IProductsRepository.class
 pl\edu\wszib\magazyn\App.class
-pl\edu\wszib\magazyn\database\DataBase.class
-pl\edu\wszib\magazyn\database\IDataBase.class
+pl\edu\wszib\magazyn\model\User.class
+pl\edu\wszib\magazyn\session\SessionObject.class
+pl\edu\wszib\magazyn\model\Product.class
+pl\edu\wszib\magazyn\controllers\CommonController.class
+pl\edu\wszib\magazyn\configuration\AppConfiguration.class
+pl\edu\wszib\magazyn\controllers\UserController.class
+pl\edu\wszib\magazyn\database\impl\UsersRepositoryImpl.class
+pl\edu\wszib\magazyn\database\IUsersRepository.class

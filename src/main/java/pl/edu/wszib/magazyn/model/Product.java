@@ -5,12 +5,14 @@ public class Product {
     String name;
     int quantity;
     String code;
+    double price;
 
-    public Product(String category, String name, int quantity, String code) {
+    public Product(String category, String name, int quantity, String code, double price) {
         this.category = category;
         this.name = name;
         this.quantity = quantity;
         this.code = code;
+        this.price = price;
     }
 
     public String getCategory() {
@@ -45,6 +47,14 @@ public class Product {
         this.code = code;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -52,6 +62,7 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", quantity=" + quantity +
                 ", code='" + code + '\'' +
+                ", price=" + price +
                 '}';
     }
 }

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="50fd0f97-9885-489f-9274-e00cecbf5c47" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/AppConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/database/DataBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/database/IDataBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/gui/GUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/gui/IGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/wszib/magazyn/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/AppConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/database/DataBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/database/IDataBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/gui/GUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/gui/IGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/wszib/magazyn/model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1l0ofNbN7MtlFoBO2mCyuUACteu" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="magazyn2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.edu.wszib.magazyn.App" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="50fd0f97-9885-489f-9274-e00cecbf5c47" name="Default Changelist" comment="" />
+      <created>1606743471494</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606743471494</updated>
+      <workItem from="1606743472559" duration="43000" />
+      <workItem from="1606743548066" duration="7000" />
+      <workItem from="1606744898912" duration="67000" />
+      <workItem from="1606745043521" duration="23000" />
+      <workItem from="1606745102645" duration="119000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="440" y="94" key="#Project_Structure" timestamp="1606743505930">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1606743505930" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1606744965642">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606744965642" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1606745125760">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606745125760" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1606745125760">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606745125760" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1606745125760">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606745125760" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1606745125760">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606745125760" />
+  </component>
+</project>

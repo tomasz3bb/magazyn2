@@ -1,10 +1,11 @@
 package pl.edu.wszib.magazyn;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import pl.edu.wszib.magazyn.gui.GUI;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-public class App {
+@SpringBootApplication
+public class App{
     public static void main(String[] args) {
-        new AnnotationConfigApplicationContext(AppConfiguration.class).getBean(GUI.class).showMainMenu();
+        SpringApplication.run(App.class, args);
     }
 }
