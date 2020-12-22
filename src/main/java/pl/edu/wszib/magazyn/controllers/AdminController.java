@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.edu.wszib.magazyn.database.IProductsRepository;
 import pl.edu.wszib.magazyn.model.Product;
-import pl.edu.wszib.magazyn.model.Role;
+import pl.edu.wszib.magazyn.model.User;
+import pl.edu.wszib.magazyn.services.IProductService;
 import pl.edu.wszib.magazyn.session.SessionObject;
 
 import javax.annotation.Resource;
@@ -18,32 +19,28 @@ import javax.annotation.Resource;
 public class AdminController {
 
     @Autowired
-    IProductsRepository productsRepository;
+    IProductService productService;
 
     @Resource
     SessionObject sessionObject;
 
-    @RequestMapping(value = "/edit/{code}", method = RequestMethod.GET)
-    public String editForm(@PathVariable String code, Model model){
-        if (!sessionObject.isLogged() || (this.sessionObject.getLoggedUser().getRole() != Role.ADMIN)){
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    public String editForm(@PathVariable int id, Model model){
+        if (!sessionObject.isLogged() || (this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN)){
             return "redirect:/login";
         }
-        Product product = this.productsRepository.getProductByCode(code);
+        Product product = this.productService.getProductById(id);
         model.addAttribute("product", product);
         model.addAttribute("isLogged", this.sessionObject.isLogged());
         model.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole().toString() : null);
         return "edit";
     }
-    @RequestMapping(value = "/edit/{code}", method = RequestMethod.POST)
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
     public String edit(@ModelAttribute Product product){
-        if (!this.sessionObject.isLogged() || (this.sessionObject.getLoggedUser().getRole() != Role.ADMIN)){
+        if (!this.sessionObject.isLogged() || (this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN)){
             return "redirect:/login";
         }
-        Product productFromDB = this.productsRepository.getProductByCode(product.getCode());
-        productFromDB.setCategory(product.getCategory());
-        productFromDB.setName(product.getName());
-        productFromDB.setQuantity(product.getQuantity());
-        productFromDB.setPrice(product.getPrice());
+        this.productService.updateProduct(product);
 
         return "redirect:/main";
     }

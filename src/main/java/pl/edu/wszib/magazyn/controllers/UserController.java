@@ -6,10 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.edu.wszib.magazyn.database.IUsersRepository;
-import pl.edu.wszib.magazyn.model.Role;
 import pl.edu.wszib.magazyn.model.User;
 import pl.edu.wszib.magazyn.model.view.RegistrationModel;
+import pl.edu.wszib.magazyn.services.IUserService;
 import pl.edu.wszib.magazyn.session.SessionObject;
 
 import javax.annotation.Resource;
@@ -20,7 +19,7 @@ import java.util.regex.Pattern;
 public class UserController {
 
     @Autowired
-    IUsersRepository usersRepository;
+    IUserService userService;
 
     @Resource
     SessionObject sessionObject;
@@ -35,7 +34,7 @@ public class UserController {
     }
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@ModelAttribute User user) {
-        this.sessionObject.setLoggedUser(this.usersRepository.authenticate(user));
+        this.userService.authenticate(user);
         if(this.sessionObject.isLogged()) {
             return "redirect:/main";
         }
@@ -43,7 +42,7 @@ public class UserController {
     }
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout() {
-        this.sessionObject.setLoggedUser(null);
+        this.userService.logout();
         return "redirect:/login";
     }
 
@@ -66,9 +65,7 @@ public class UserController {
             return "redirect:/register";
         }
 
-        boolean registrationResult = usersRepository.register(new User(registrationModel.getLogin(), registrationModel.getPass(), Role.USER));
-
-        if(registrationResult) {
+        if(this.userService.register(registrationModel)) {
             return "redirect:/login";
         } else {
             this.sessionObject.setInfo("login zajęty !!");

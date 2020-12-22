@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.edu.wszib.magazyn.database.IProductsRepository;
 import pl.edu.wszib.magazyn.model.Product;
+import pl.edu.wszib.magazyn.services.IProductService;
 import pl.edu.wszib.magazyn.session.SessionObject;
 
 import javax.annotation.Resource;
@@ -16,7 +17,7 @@ import java.util.List;
 public class CommonController {
 
     @Autowired
-    IProductsRepository productsRepository;
+    IProductService productService;
 
     @Resource
     SessionObject sessionObject;
@@ -28,8 +29,7 @@ public class CommonController {
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public String main(Model model){
-        List<Product> products = this.productsRepository.getAllProducts();
-        model.addAttribute("products", products);
+        model.addAttribute("products", this.productService.getAllProducts());
         model.addAttribute("isLogged", this.sessionObject.isLogged());
         model.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole().toString() : null);
         return "main";

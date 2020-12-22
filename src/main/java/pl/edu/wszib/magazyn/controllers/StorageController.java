@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.edu.wszib.magazyn.database.IProductsRepository;
+import pl.edu.wszib.magazyn.services.IProductService;
+import pl.edu.wszib.magazyn.services.IStorageService;
 import pl.edu.wszib.magazyn.session.SessionObject;
 
 import javax.annotation.Resource;
@@ -14,7 +16,7 @@ import javax.annotation.Resource;
 public class StorageController {
 
     @Autowired
-    IProductsRepository productsRepository;
+    IStorageService storageService;
 
     @Resource
     SessionObject sessionObject;

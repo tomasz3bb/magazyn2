@@ -1,13 +1,15 @@
 package pl.edu.wszib.magazyn.model;
 
 public class Product {
+    int id;
     String category;
     String name;
     int quantity;
     String code;
     double price;
 
-    public Product(String category, String name, int quantity, String code, double price) {
+    public Product(int id, String category, String name, int quantity, String code, double price) {
+        this.id = id;
         this.category = category;
         this.name = name;
         this.quantity = quantity;
@@ -55,10 +57,19 @@ public class Product {
         this.price = price;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
-                "category='" + category + '\'' +
+                "id=" + id +
+                ", category='" + category + '\'' +
                 ", name='" + name + '\'' +
                 ", quantity=" + quantity +
                 ", code='" + code + '\'' +
@@ -66,3 +77,4 @@ public class Product {
                 '}';
     }
 }
+
