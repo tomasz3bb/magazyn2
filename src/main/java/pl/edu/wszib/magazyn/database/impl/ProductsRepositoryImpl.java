@@ -47,4 +47,13 @@ public class ProductsRepositoryImpl implements IProductsRepository {
     public List<Product> getAllProducts() {
         return this.products;
     }
+    @Override
+    public Product getProductByCode(String code){
+        for (Product product : this.products){
+            if (product.getCode().equals(code)){
+                return product;
+            }
+        }
+        return null;
+    }
 }

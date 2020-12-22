@@ -8,4 +8,5 @@ public interface IProductsRepository {
     List<Product> getAllProducts();
     boolean addProductQuantity(String code, int quantity);
     boolean deleteProductQuantity(String code, int quantity);
+    Product getProductByCode(String code);
 }

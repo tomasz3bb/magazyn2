@@ -31,6 +31,7 @@ public class CommonController {
         List<Product> products = this.productsRepository.getAllProducts();
         model.addAttribute("products", products);
         model.addAttribute("isLogged", this.sessionObject.isLogged());
+        model.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole().toString() : null);
         return "main";
     }
 
