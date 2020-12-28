@@ -3,25 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Storage</title>
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/storage.css">
     <link rel="stylesheet" href="/commons.css">
 </head>
 <body>
 <div th:replace="fragments.html :: logo"></div>
 <div th:replace="fragments.html :: menu"></div>
 <div id="content">
+
+    <div class="row header">
+        <div class="title">Tytuł</div>
+        <div class="pieces">Sztuk</div>
+        <div class="price">Cena za sztukę</div>
+        <div class="total">Cena</div>
+    </div>
+
     <th:block th:each="product : ${products}">
-        <div class="product-box">
-            <div th:text="${product.name}" class="name-box"></div>
-            <div th:text="${product.category}" class="category-box"></div>
-            <div class="product-data-box">
-                <div th:text="'Kod: ' + ${product.code}"></div>
-                <div th:text="'Ilość: ' + ${product.quantity}"></div>
-                <div th:text="'Cena za sztukę: ' + ${product.price} + 'zł'"></div>
-                <div class="total" th:text="'Cena razem: ' + ${product.price * product.quantity} + ' zł'"></div>
-            </div>
+        <div class="row">
+            <div class="title" th:text="${product.category} + ' ' + ${product.name}"></div>
+            <div class="pieces" th:text="${product.quantity}"></div>
+            <div class="price" th:text="${product.price} + ' zł'"></div>
+            <div class="total" th:text="${product.price * product.quantity} + ' zł'"></div>
         </div>
     </th:block>
+
+    <div class="row header">
+        <div class="title"></div>
+        <div class="pieces"></div>
+        <div class="price">Suma</div>
+        <div class="total" th:text="${sum} + ' zł'"></div>
+    </div>
 </div>
 </body>
 </html>
