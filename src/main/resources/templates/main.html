@@ -18,8 +18,9 @@
                 <div th:text="'Kod: ' + ${product.code}"></div>
                 <div th:text="'Ilość: ' + ${product.quantity}"></div>
                 <div th:text="'Cena: ' + ${product.price} + 'zł'"></div>
-                <a th:href="@{/addToStorage/{id}(id=${product.id})}" class="buy-button" th:if="${isLogged}">Dodaj do magazynu</a>
-                <a th:if="${role == 'ADMIN'}" th:href="@{/edit/{id}(id=${product.id})}" class="edit-button">Edytuj produkt</a>
+                <div><a th:href="@{/addToStorage/{id}(id=${product.id})}" class="buy-button" th:if="${isLogged}">Dodaj do magazynu</a></div>
+                <div><a th:href="@{/deleteFromStorage/{id}(id=${product.id})}" class="buy-button" th:if="${isLogged}">Usuń z magazynu</a></div>
+                <div><a th:if="${role == 'ADMIN'}" th:href="@{/edit/{id}(id=${product.id})}" class="edit-button">Edytuj produkt</a></div>
             </div>
         </div>
     </th:block>

@@ -41,4 +41,13 @@ public class StorageController {
         this.storageService.addProductByIdToStorage(id);
         return "redirect:/main";
     }
+
+    @RequestMapping(value = "/deleteFromStorage/{id}", method = RequestMethod.GET)
+    public String deleteFromStorage(@PathVariable int id){
+        if (!this.sessionObject.isLogged()){
+            return "redirect:/login";
+        }
+        this.storageService.deleteProductByIdFromStorage(id);
+        return "redirect:/main";
+    }
 }

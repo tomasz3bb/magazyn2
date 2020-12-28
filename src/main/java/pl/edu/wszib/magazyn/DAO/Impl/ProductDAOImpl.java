@@ -20,7 +20,7 @@ public class ProductDAOImpl implements IProductDAO {
 
     @Override
     public Product getProductById(int id) {
-        String sql = "SELECT * FROM tproduct WHERE id = ?;";
+        String sql = "SELECT * FROM tproduct WHERE id = ?";
         try {
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
@@ -31,7 +31,7 @@ public class ProductDAOImpl implements IProductDAO {
                 return new Product(resultSet.getInt("id"),
                     resultSet.getString("category"),
                     resultSet.getString("name"),
-                        resultSet.getString("code"),
+                    resultSet.getString("code"),
                     resultSet.getInt("quantity"),
                     resultSet.getDouble("price"));
             }
@@ -44,7 +44,7 @@ public class ProductDAOImpl implements IProductDAO {
 
     @Override
     public void updateProduct(Product product) {
-        String sql ="UPDATE tproduct SET category=?, name=?, code=?, quantity=?, price=? WHERE id=?;";
+        String sql ="UPDATE tproduct SET category = ?, name = ?, code = ?, quantity = ?, price = ? WHERE id = ?";
         try {
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setString(1, product.getCategory());

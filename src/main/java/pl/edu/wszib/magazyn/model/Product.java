@@ -17,6 +17,17 @@ public class Product {
         this.price = price;
     }
 
+    public Product() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getCategory() {
         return category;
     }
@@ -33,20 +44,20 @@ public class Product {
         this.name = name;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public String getCode() {
         return code;
     }
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public double getPrice() {
@@ -57,24 +68,17 @@ public class Product {
         this.price = price;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     @Override
     public String toString() {
         return "Product{" +
                 "id=" + id +
                 ", category='" + category + '\'' +
                 ", name='" + name + '\'' +
-                ", quantity=" + quantity +
                 ", code='" + code + '\'' +
+                ", quantity=" + quantity +
                 ", price=" + price +
                 '}';
     }
+
 }
 

@@ -39,4 +39,17 @@ public class StorageServiceImpl implements IStorageService {
         product.setQuantity(1);
         this.sessionObject.getStorage().add(product);
     }
+
+    @Override
+    public void deleteProductByIdFromStorage(int id) {
+        Product product = this.productDAO.getProductById(id);
+        for (Product productFromStorage : this.sessionObject.getStorage()){
+            if (productFromStorage.getId() == product.getId()){
+                productFromStorage.setQuantity(productFromStorage.getQuantity() - 1);
+                return;
+            }
+        }
+        product.setQuantity(1);
+        this.sessionObject.getStorage().remove(product);
+    }
 }

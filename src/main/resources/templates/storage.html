@@ -17,7 +17,8 @@
             <div class="product-data-box">
                 <div th:text="'Kod: ' + ${product.code}"></div>
                 <div th:text="'Ilość: ' + ${product.quantity}"></div>
-                <div th:text="'Cena: ' + ${product.price} + 'zł'"></div>
+                <div th:text="'Cena za sztukę: ' + ${product.price} + 'zł'"></div>
+                <div class="total" th:text="'Cena razem: ' + ${product.price * product.quantity} + ' zł'"></div>
             </div>
         </div>
     </th:block>

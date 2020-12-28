@@ -25,8 +25,8 @@ public class AdminController {
     SessionObject sessionObject;
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-    public String editForm(@PathVariable int id, Model model){
-        if (!sessionObject.isLogged() || (this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN)){
+    public String editForm(@PathVariable int id, Model model) {
+        if(!this.sessionObject.isLogged() || this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN) {
             return "redirect:/login";
         }
         Product product = this.productService.getProductById(id);
@@ -35,11 +35,13 @@ public class AdminController {
         model.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole().toString() : null);
         return "edit";
     }
+
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
-    public String edit(@ModelAttribute Product product){
-        if (!this.sessionObject.isLogged() || (this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN)){
+    public String edit(@ModelAttribute Product product) {
+        if(!this.sessionObject.isLogged() || this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN) {
             return "redirect:/login";
         }
+
         this.productService.updateProduct(product);
 
         return "redirect:/main";
