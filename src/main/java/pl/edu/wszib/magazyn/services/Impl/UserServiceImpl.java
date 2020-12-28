@@ -13,19 +13,20 @@ import javax.annotation.Resource;
 @Service
 public class UserServiceImpl implements IUserService {
 
-    @Autowired
-    IUserDAO userDAO;
-
     @Resource
     SessionObject sessionObject;
+
+    @Autowired
+    IUserDAO userDAO;
 
     @Override
     public void authenticate(User user) {
         User userFromDatabase = this.userDAO.getUserByLogin(user.getLogin());
-        if (userFromDatabase == null){
+        if(userFromDatabase == null) {
             return;
         }
-        if (user.getPass().equals(userFromDatabase.getPass())){
+
+        if(user.getPass().equals(userFromDatabase.getPass())) {
             this.sessionObject.setLoggedUser(userFromDatabase);
         }
     }
@@ -40,7 +41,9 @@ public class UserServiceImpl implements IUserService {
         if(this.userDAO.getUserByLogin(registrationModel.getLogin()) != null) {
             return false;
         }
+
         User newUser = new User(0, registrationModel.getLogin(), registrationModel.getPass(), User.Role.USER);
+
         return this.userDAO.persistUser(newUser);
     }
 }
