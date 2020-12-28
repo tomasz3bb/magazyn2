@@ -4,16 +4,16 @@ public class Product {
     int id;
     String category;
     String name;
-    int quantity;
     String code;
+    int quantity;
     double price;
 
-    public Product(int id, String category, String name, int quantity, String code, double price) {
+    public Product(int id, String category, String name, String code, int quantity, double price) {
         this.id = id;
         this.category = category;
         this.name = name;
-        this.quantity = quantity;
         this.code = code;
+        this.quantity = quantity;
         this.price = price;
     }
 

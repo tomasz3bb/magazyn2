@@ -18,36 +18,34 @@ public class UserDAOImpl implements IUserDAO {
 
     @Override
     public User getUserByLogin(String login) {
-        String sql = "SELECT * FROM tuser WHERE login = ?";
+        String sql = "SELECT * FROM tuser WHERE login = ?;";
         try {
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setString(1, login);
             ResultSet resultSet = preparedStatement.executeQuery();
-            if(resultSet.next()) {
-                User user = new User();
-                user.setId(resultSet.getInt("id"));
-                user.setLogin(resultSet.getString("login"));
-                user.setPass(resultSet.getString("pass"));
-                user.setRole(User.Role.valueOf(resultSet.getString("role")));
+            if (resultSet.next()){
+                User userFromDB = new User();
+                userFromDB.setId(resultSet.getInt("id"));
+                userFromDB.setLogin(resultSet.getString("login"));
+                userFromDB.setPass(resultSet.getString("pass"));
+                userFromDB.setRole(User.Role.valueOf(resultSet.getString("role")));
 
-                return user;
+                return userFromDB;
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
         return null;
     }
 
     @Override
     public boolean persistUser(User user) {
-        String sql = "INSERT INTO tuser (login, pass, role) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO tuser (login, pass, role) VALUES (?, ?, ?);";
         try {
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
-            preparedStatement.setString(1, user.getLogin());
+            preparedStatement.setString(1, user.getLogin() );
             preparedStatement.setString(2, user.getPass());
             preparedStatement.setString(3, user.getRole().toString());
-
             preparedStatement.executeUpdate();
             return true;
         } catch (SQLException throwables) {

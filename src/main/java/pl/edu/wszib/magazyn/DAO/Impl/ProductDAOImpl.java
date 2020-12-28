@@ -31,8 +31,8 @@ public class ProductDAOImpl implements IProductDAO {
                 return new Product(resultSet.getInt("id"),
                     resultSet.getString("category"),
                     resultSet.getString("name"),
+                        resultSet.getString("code"),
                     resultSet.getInt("quantity"),
-                    resultSet.getString("code"),
                     resultSet.getDouble("price"));
             }
 
@@ -44,13 +44,13 @@ public class ProductDAOImpl implements IProductDAO {
 
     @Override
     public void updateProduct(Product product) {
-        String sql ="UPDATE tproduct SET category=?, name=?, quantity=?, code=?, price=? WHERE id=?;";
+        String sql ="UPDATE tproduct SET category=?, name=?, code=?, quantity=?, price=? WHERE id=?;";
         try {
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setString(1, product.getCategory());
             preparedStatement.setString(2, product.getName());
-            preparedStatement.setInt(3, product.getQuantity());
-            preparedStatement.setString(4, product.getCode());
+            preparedStatement.setString(3, product.getCode());
+            preparedStatement.setInt(4, product.getQuantity());
             preparedStatement.setDouble(5, product.getPrice());
             preparedStatement.setInt(6, product.getId());
             preparedStatement.executeUpdate();
@@ -70,8 +70,8 @@ public class ProductDAOImpl implements IProductDAO {
                 products.add(new Product(resultSet.getInt("id"),
                         resultSet.getString("category"),
                         resultSet.getString("name"),
-                        resultSet.getInt("quantity"),
                         resultSet.getString("code"),
+                        resultSet.getInt("quantity"),
                         resultSet.getDouble("price")));
             }
 
