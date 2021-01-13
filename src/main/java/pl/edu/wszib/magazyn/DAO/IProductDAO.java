@@ -9,5 +9,7 @@ public interface IProductDAO {
     void updateProduct(Product product);
     void addQuantity(int id);
     void deleteQuantity(int id);
+    boolean addProduct(Product product);
+    void deleteProduct(Product product);
     List<Product> getAllProducts();
 }

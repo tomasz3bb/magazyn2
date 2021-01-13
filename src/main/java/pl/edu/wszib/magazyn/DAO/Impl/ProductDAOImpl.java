@@ -43,6 +43,36 @@ public class ProductDAOImpl implements IProductDAO {
     }
 
     @Override
+    public boolean addProduct(Product product) {
+        String sql = "INSERT INTO tproduct (id, category, name, code, quantity, price) VALUES (?, ?, ?, ?, ?, ?);";
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
+            preparedStatement.setInt(1, product.getId());
+            preparedStatement.setString(2, product.getCategory());
+            preparedStatement.setString(3, product.getName());
+            preparedStatement.setString(4, product.getCode());
+            preparedStatement.setInt(5, product.getQuantity());
+            preparedStatement.setDouble(6, product.getPrice());
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        }
+    }
+    @Override
+    public void deleteProduct(Product product) {
+        String sql = "DELETE FROM tproduct WHERE id=?";
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
+            preparedStatement.setInt(1, product.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    @Override
     public void updateProduct(Product product) {
         String sql ="UPDATE tproduct SET category = ?, name = ?, code = ?, quantity = ?, price = ? WHERE id = ?";
         try {

@@ -10,6 +10,7 @@
     <a href="/contact" class="menu-button">Kontakt</a>
     <a href="/logout" class="menu-button" th:if="${isLogged}">Wyloguj</a>
     <a href="/login" class="menu-button" th:if="${!isLogged}">Zaloguj</a>
+    <a href="/add" class="menu-button" th:if="${role == 'ADMIN'}">Dodaj nowy produkt</a>
 </div>
 
 <img src="/logo.png" id="logo" th:fragment="logo">

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.edu.wszib.magazyn.DAO.IProductDAO;
 import pl.edu.wszib.magazyn.model.Product;
+import pl.edu.wszib.magazyn.model.view.ProductModel;
 import pl.edu.wszib.magazyn.services.IProductService;
 
 import java.util.List;
@@ -30,6 +31,18 @@ public class ProductServiceImpl implements IProductService {
 
         this.productDAO.updateProduct(productFromDB);
 
+    }
+
+    @Override
+    public boolean addProduct(ProductModel productModel) {
+        Product newProduct = new Product(0, productModel.getCategory(), productModel.getName(),
+                productModel.getCode(), productModel.getQuantity(), productModel.getPrice());
+        return this.productDAO.addProduct(newProduct);
+    }
+    @Override
+    public void deleteProduct(Product product) {
+        Product productFromDatabase = this.productDAO.getProductById(product.getId());
+        this.productDAO.deleteProduct(productFromDatabase);
     }
 
     @Override
