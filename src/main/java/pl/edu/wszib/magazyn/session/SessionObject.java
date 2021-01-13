@@ -2,11 +2,7 @@ package pl.edu.wszib.magazyn.session;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
-import pl.edu.wszib.magazyn.model.Product;
 import pl.edu.wszib.magazyn.model.User;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 @SessionScope
