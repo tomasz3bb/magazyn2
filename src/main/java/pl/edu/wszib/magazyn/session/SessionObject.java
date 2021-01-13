@@ -11,7 +11,6 @@ import java.util.List;
 @Component
 @SessionScope
 public class SessionObject {
-    private final List<Product> storage = new ArrayList<>();
     private User loggedUser = null;
     private String info = null;
 
@@ -36,7 +35,5 @@ public class SessionObject {
         this.info = null;
         return temp;
     }
-    public List<Product> getStorage(){
-        return storage;
-    }
+
 }

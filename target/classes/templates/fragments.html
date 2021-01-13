@@ -6,9 +6,8 @@
 </head>
 <body>
 <div id="menu" th:fragment="menu">
-    <a href="/main" class="menu-button">Strona główna</a>
+    <a href="/main" class="menu-button" th:if="${isLogged}">Magazyn</a>
     <a href="/contact" class="menu-button">Kontakt</a>
-    <a href="/storage" class="menu-button" th:if="${isLogged}">Magazyn</a>
     <a href="/logout" class="menu-button" th:if="${isLogged}">Wyloguj</a>
     <a href="/login" class="menu-button" th:if="${!isLogged}">Zaloguj</a>
 </div>

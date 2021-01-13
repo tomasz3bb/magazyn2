@@ -60,6 +60,30 @@ public class ProductDAOImpl implements IProductDAO {
     }
 
     @Override
+    public void addQuantity(int id) {
+        String sql = "UPDATE tproduct SET quantity = quantity + 1 WHERE id = ?";
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteQuantity(int id) {
+        String sql = "UPDATE tproduct SET quantity = quantity - 1 WHERE id = ?";
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    @Override
     public List<Product> getAllProducts() {
         List<Product> products = new ArrayList<>();
         try {
