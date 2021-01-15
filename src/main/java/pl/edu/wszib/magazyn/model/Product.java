@@ -1,12 +1,12 @@
 package pl.edu.wszib.magazyn.model;
 
 public class Product {
-    int id;
-    String category;
-    String name;
-    String code;
-    int quantity;
-    double price;
+    private int id;
+    private String category;
+    private String name;
+    private String code;
+    private int quantity;
+    private double price;
 
     public Product(int id, String category, String name, String code, int quantity, double price) {
         this.id = id;
